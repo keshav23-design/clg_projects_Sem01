@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        h2 { text-align: center; color: #333; margin-bottom: 20px; }
+        label { margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border 0.3s;
+        }
+        input:focus { border-color: #007bff; }
+        input.error { border-color: #ff4d4d; background-color: #fff0f0; }
+        input.success { border-color: #28a745; background-color: #f0fff4; }
+        button {
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <form onsubmit="return handleFinalSubmit(event)">
+        <h2>Login</h2>
+        <label>Username (min 3)</label>
+        <input type="text" id="user" oninput="validate(this)" placeholder="Type username...">
+
+        <label>Password (min 6)</label>
+        <input type="password" id="pass" oninput="validate(this)" placeholder="Type password...">
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        // 1. LIVE CHECK (oninput)
+        // We use one function for both inputs to keep it simple
+        function validate(inputField) {
+            // Determine the minimum length based on the input type
+            const minLength = inputField.type === 'password' ? 6 : 3;
+
+            if (inputField.value.length < minLength) {
+                // Invalid: Red border
+                inputField.className = 'error';
+            } else {
+                // Valid: Green border
+                inputField.className = 'success';
+            }
+        }
+        // 2. FINAL CHECK (onsubmit)
+        function handleFinalSubmit(e) {
+            const user = document.getElementById('user');
+            const pass = document.getElementById('pass');
+            // Check if either input has the "error" class or is empty
+            if (user.value.length < 3 || pass.value.length < 6) {
+                alert("Error: Please fix the fields highlighted in red.");
+                e.preventDefault(); // Stop submission
+                return false;
+            }
+            // Success
+            alert("Success! Form is valid.");
+            return true;
+        }
+    </script>
+</body>
+</html>

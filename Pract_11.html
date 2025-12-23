@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Calculator</title>
+    <style>
+      body {
+        font-family: sans-serif; 
+        text-align: center; 
+        margin-top: 50px;
+      }
+      #main {
+        display: inline-block; 
+        padding: 20px;
+        border: 2px solid #ccc; 
+        border-radius: 10px; 
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); 
+      }
+      input {
+        padding: 10px; 
+        margin: 5px; 
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px; 
+        margin: 5px; 
+        cursor: pointer; 
+        background-color: #eee; 
+        border: 1px solid #ccc;
+        border-radius: 5px; 
+      }
+      button:hover {
+        background-color: #ddd; 
+      }
+      h3 {
+        color: #333;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h2>Simple Calculator</h2>
+
+      <input type="number" id="n1" placeholder="First Number" />
+      <br />
+      <input type="number" id="n2" placeholder="Second Number" />
+
+      <br /><br />
+
+      <button onclick="calc('+')">+</button>
+      <button onclick="calc('-')">−</button>
+      <button onclick="calc('*')">×</button>
+      <button onclick="calc('/')">÷</button>
+
+      <h3 id="output">Result: --</h3>
+    </div>
+
+    <script>
+      function calc(op) {
+        // Get inputs
+        var num1 = parseFloat(document.getElementById("n1").value);
+        var num2 = parseFloat(document.getElementById("n2").value);
+        var result = 0;
+
+        // Logic
+        if (isNaN(num1) || isNaN(num2)) {
+          result = "Enter valid numbers";
+        } else {
+          if (op === "+") result = num1 + num2;
+          else if (op === "-") result = num1 - num2;
+          else if (op === "*") result = num1 * num2;
+          else if (op === "/") result = num1 / num2;
+        }
+
+        // Output
+        document.getElementById("output").innerText = "Result: " + result;
+      }
+    </script>
+  </body>
+</html>

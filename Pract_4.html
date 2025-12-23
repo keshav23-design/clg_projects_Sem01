@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+<body>
+    <h1 align="center">Student Registration Form</h1>
+    <hr>
+
+        <form action="#" method="post" align="center" >
+            
+            <div class="form-row">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
+            </div><br>
+
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div><br>
+
+            <div class="form-row">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div><br>
+
+            <div class="form-row">
+                <label>Gender:</label>
+                <div class="options-group">
+                    <label>
+                        <input type="radio" name="gender" value="male" required> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female"> Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="other"> Other
+                    </label>
+                </div>
+            </div><br>
+
+            <div class="form-row">
+                <label>Select Your Hobbies:</label>
+                <div class="options-group">
+                    <label>
+                        <input type="checkbox" name="hobbies[]" value="reading"> Reading
+                    </label>
+                    <label>
+                        <input type="checkbox" name="hobbies[]" value="music"> Music
+                    </label>
+                    <label>
+                        <input type="checkbox" name="hobbies[]" value="traveling"> Traveling
+                    </label>
+                </div>
+            </div><br>
+
+            <div class="form-row">
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="" disabled selected>Choose your course</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="ee">Electrical Engineering</option>
+                    <option value="me">Mechanical Engineering</option>
+                    <option option="ce">Civil Engineering</option>
+                </select>
+            </div><br><br>
+
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

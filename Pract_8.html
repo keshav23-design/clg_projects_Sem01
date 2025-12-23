@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 5px;
+            padding: 5px;
+        }
+        .highlight{
+            color: white;
+            background-color: darkblue;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #main-heading{
+            color: crimson;
+            text-align: center;
+            text-decoration: underline;
+        }
+        div p{
+            color: green;
+            font-style: italic;
+        }
+        h2 ,h3, h4{
+            color: purple;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-heading">CSS Selectors Demonstration</h1>
+    <h2>Class Selector Example</h2>
+    <p class="highlight">This paragraph uses a class selector (.highlight).</p>
+    <h3>ID Selector Example</h3>
+    <p id="info">Each ID is unique and applies to a specific element (#main-heading).</p>
+    <h4>Descendant Selector Example</h4>
+    <div>
+        <p>This paragragph is inside a div, styled using a descendant selector (div p).</p>
+    </div>
+    <h2>Group Selector Example</h2>
+    <p>Notice that h2, h3, and h4 share the same style, because of using group selector.</p>
+</body>
+</html>
