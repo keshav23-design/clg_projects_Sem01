@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Simple DOM Practice</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 20px; }
-        .mystery-box { border: 1px solid black; padding: 20px; margin: 20px auto; width: 200px; }
-        button { margin: 5px; cursor: pointer; }
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+      .mystery-box {
+        border: 1px solid black;
+        padding: 20px;
+        margin: 20px auto;
+        width: 200px;
+      }
+      button {
+        margin: 5px;
+        cursor: pointer;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>DOM Manipulation</h1>
     <!-- Part 1: getElementById -->
     <h3>1. Using getElementById()</h3>
     <p id="status-text">Status: Waiting...</p>
     <button onclick="changeStatus()">Change Status</button>
-    <br><br>
+    <br /><br />
     <!-- Part 2: querySelector -->
     <h3>2. Using querySelector()</h3>
     <div class="mystery-box">Box Content</div>
     <button onclick="changeBox()">Change Box</button>
-    <hr>
+    <hr />
     <button onclick="resetPage()">Reset</button>
     <script>
-        function changeStatus() {
-            // Select element by ID and change HTML
-            document.getElementById("status-text").innerHTML = "Status: <b>Active!</b>";
-        }
-        function changeBox() {
-            // Select first element by Class
-            var box = document.querySelector(".mystery-box");
-            box.innerHTML = "New Content";
-            box.style.backgroundColor = "lightgreen";
-        }
-        function resetPage() {
-            document.getElementById("status-text").innerHTML = "Status: Waiting...";
-            var box = document.querySelector(".mystery-box");
-            box.innerHTML = "Box Content";
-            box.style.backgroundColor = "white";
-        }
+      function changeStatus() {
+        // Select element by ID and change HTML
+        document.getElementById("status-text").innerHTML =
+          "Status: <b>Active!</b>";
+      }
+      function changeBox() {
+        // Select first element by Class
+        var box = document.querySelector(".mystery-box");
+        box.innerHTML = "New Content";
+        box.style.backgroundColor = "lightgreen";
+      }
+      function resetPage() {
+        document.getElementById("status-text").innerHTML = "Status: Waiting...";
+        var box = document.querySelector(".mystery-box");
+        box.innerHTML = "Box Content";
+        box.style.backgroundColor = "white";
+      }
     </script>
-</body>
+  </body>
 </html>
